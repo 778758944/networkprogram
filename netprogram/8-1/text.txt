@@ -1,0 +1,23 @@
+At Exif format, the first IFD is IFD0(IFD of main image), then it links to IFD1(IFD of thumbnail image) and IFD link is terminated. But IFD0/IFD1 doesn't contain any digicam's information such as shutter speed, focal length etc. IFD0 always contains special Tag Exif Offset(0x8769), it shows an offset to Exif SubIFD. Exif SubIFD is IFD formatted data also, it contains digicam's information.
+
+0000: 49 49 2A 00 08 00 00 00-02 00 1A 01 05 00 01 00
+0010: 00 00 26 00 00 00 69 87-04 00 01 00 00 00 11 02
+0020: 00 00 40 00 00 00 48 00-00 00 01 00 00 00
+If the first part of TIFF data is above, it can read as;
+The first 2bytes are "I I", byte align is 'Intel'.
+Address 0x0004~0x0007 is 0x08000000, IFD0 starts from address '0x0008'
+Address 0x0008~0x0009 is 0x0200, number of directory entry of IFD0 is '2'.
+Address 0x000a~0x000b is 0x1A01, it means this is a XResolution(0x011A) Tag, it contains a horizontal resolution of image.
+Address 0x000c~0x000d is 0x0500, format of this value is unsigned rational(0x0005).
+Address 0x000e~0x0011 is 0x01000000, number of components is '1'. Unsigned rational's data size is 8bytes/components, so total data length is 1x8=8bytes.
+Total data length is larger than 4bytes, so next 4bytes contains an offset to data.
+Address 0x0012~0x0015 is 0x26000000, XResolution data is stored to address 0x0026
+Address 0x0026~0x0029 is 0x48000000, numerator is 72, address 0x002a~0x002d is 0x0100000000, denominator is '1'. So the value of XResoultion is 72/1.
+Address0x0016~0x0017 is 0x6987, next Tag is ExifOffset(0x8769). Its value is an offset to Exif SubIFD
+Data format is 0x0004, unsigned long integer.
+This Tag has one component. Unsigned long integer's data size is 4bytes/components, so total data size is 4bytes.
+Total data size is equal to 4bytes, next 4bytes contains the value of Exif SubIFD offset.
+Address 0x001e~0x0021 is 0x11020000, Exif SubIFD starts from address '0x0211'.
+This is the last directory entry, next 4bytes shows an offset to next IFD.
+Address 0x0022~0x0025 is 0x40000000, next IFD starts from address '0x0040':wq
+
