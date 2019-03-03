@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7267A070222B8AF8002221EA /* tcp_udp_echo.c in Sources */ = {isa = PBXBuildFile; fileRef = 7267A06F222B8AF8002221EA /* tcp_udp_echo.c */; };
 		7F06CD4922241DFC00A15190 /* libunp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72AC35282220FAAB004BE496 /* libunp.a */; };
-		7F21DD5E2228FB5500E47B67 /* checksockopt.c in Sources */ = {isa = PBXBuildFile; fileRef = 7F21DD5D2228FB5500E47B67 /* checksockopt.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,6 +24,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		72200188222A29970076F274 /* echo_udp_client.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = echo_udp_client.c; sourceTree = "<group>"; };
+		7267A067222B7FAF002221EA /* echo_udp_server.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = echo_udp_server.c; sourceTree = "<group>"; };
+		7267A06A222B870E002221EA /* udp_address.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = udp_address.c; sourceTree = "<group>"; };
+		7267A06F222B8AF8002221EA /* tcp_udp_echo.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tcp_udp_echo.c; sourceTree = "<group>"; };
 		72AC35162220ECDF004BE496 /* netprogram */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = netprogram; sourceTree = BUILT_PRODUCTS_DIR; };
 		72AC35192220ECDF004BE496 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		72AC35282220FAAB004BE496 /* libunp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libunp.a; path = ../unixnetworkprogram/libunp.a; sourceTree = "<group>"; };
@@ -49,6 +53,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72200184222A247F0076F274 /* 8-6udp */ = {
+			isa = PBXGroup;
+			children = (
+				72200188222A29970076F274 /* echo_udp_client.c */,
+				7267A067222B7FAF002221EA /* echo_udp_server.c */,
+				7267A06A222B870E002221EA /* udp_address.c */,
+				7267A06F222B8AF8002221EA /* tcp_udp_echo.c */,
+			);
+			path = "8-6udp";
+			sourceTree = "<group>";
+		};
 		72AC350D2220ECDF004BE496 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +84,7 @@
 		72AC35182220ECDF004BE496 /* netprogram */ = {
 			isa = PBXGroup;
 			children = (
+				72200184222A247F0076F274 /* 8-6udp */,
 				7F21DD5C2228FB3800E47B67 /* sockopt */,
 				7F06CD4422241D0700A15190 /* 8-1 */,
 				72AC352A2220FD6B004BE496 /* 7-1 */,
@@ -170,7 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F21DD5E2228FB5500E47B67 /* checksockopt.c in Sources */,
+				7267A070222B8AF8002221EA /* tcp_udp_echo.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
