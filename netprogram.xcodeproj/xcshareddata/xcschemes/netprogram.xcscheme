@@ -63,7 +63,11 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "35.200.6.233"
+            argument = "::1"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "daytime"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

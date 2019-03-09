@@ -2,11 +2,11 @@ CFLAGS = -I/Users/wentaoxing/Documents/unixnetworkprogram/lib -g -O2 -D_REENTRAN
 LIBS = /Users/wentaoxing/Documents/unixnetworkprogram/libunp.a -lresolv -lpthread
 
 
-echo_server: echo_server.c
-	${CC} ${CFLAGS} -o $@ echo_server.c ${LIBS}
+daytimeserv: daytimeserv.c
+	${CC} ${CFLAGS} -o $@ daytimeserv.c ../lib/libnet.c ${LIBS}
 
-echo_client: echo_client.c
-	${CC} ${CFLAGS} -o $@ echo_client.c ${LIBS}
+daytimeudpserv: daytimeudpserv.c libnet.c
+	${CC} ${CFLAGS} -o $@ daytimeudpserv.c libnet.c ${LIBS}
 
 echo_select_server: echo_select_server.c
 	${CC} ${CFLAGS} -o $@ echo_select_server.c ${LIBS}

@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7F06CD4922241DFC00A15190 /* libunp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72AC35282220FAAB004BE496 /* libunp.a */; };
-		7F21DD5E2228FB5500E47B67 /* checksockopt.c in Sources */ = {isa = PBXBuildFile; fileRef = 7F21DD5D2228FB5500E47B67 /* checksockopt.c */; };
+		7FB75EA2222F6E6B00C7BA2D /* libnet.c in Sources */ = {isa = PBXBuildFile; fileRef = 7FB75EA1222F6E6B00C7BA2D /* libnet.c */; };
+		7FE2EB73223102DF00ACC5F2 /* daytimecli.c in Sources */ = {isa = PBXBuildFile; fileRef = 7FB75EA3222F740200C7BA2D /* daytimecli.c */; };
+		7FE2EB78223234EB00ACC5F2 /* daytimeserv.c in Sources */ = {isa = PBXBuildFile; fileRef = 7FE2EB7622322F5F00ACC5F2 /* daytimeserv.c */; };
+		7FE2EB7A22324BC700ACC5F2 /* daytimeservinetd.c in Sources */ = {isa = PBXBuildFile; fileRef = 7FE2EB7922324BC700ACC5F2 /* daytimeservinetd.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +38,15 @@
 		7F21DD5D2228FB5500E47B67 /* checksockopt.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = checksockopt.c; sourceTree = "<group>"; };
 		7F665EF622277D1C00B71A6F /* echo_select_server.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = echo_select_server.c; sourceTree = "<group>"; };
 		7F665EF92227AC7900B71A6F /* echo_poll_server.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = echo_poll_server.c; sourceTree = "<group>"; };
+		7FB38861222E60AB003F17BD /* gethostbyname.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gethostbyname.c; sourceTree = "<group>"; };
+		7FB75EA0222F6E6B00C7BA2D /* libnet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libnet.h; sourceTree = "<group>"; };
+		7FB75EA1222F6E6B00C7BA2D /* libnet.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = libnet.c; sourceTree = "<group>"; };
+		7FB75EA3222F740200C7BA2D /* daytimecli.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = daytimecli.c; sourceTree = "<group>"; };
+		7FB75EA5222F911300C7BA2D /* daytimeserv.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = daytimeserv.c; sourceTree = "<group>"; };
+		7FB75EA9222F9D1900C7BA2D /* daytimeudpcli.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = daytimeudpcli.c; sourceTree = "<group>"; };
+		7FB75EAB222FA9BA00C7BA2D /* daytimeudpserv.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = daytimeudpserv.c; sourceTree = "<group>"; };
+		7FE2EB7622322F5F00ACC5F2 /* daytimeserv.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = daytimeserv.c; sourceTree = "<group>"; };
+		7FE2EB7922324BC700ACC5F2 /* daytimeservinetd.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = daytimeservinetd.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +81,9 @@
 		72AC35182220ECDF004BE496 /* netprogram */ = {
 			isa = PBXGroup;
 			children = (
+				7FE2EB7522322F2300ACC5F2 /* 9-2 */,
+				7FB75E9F222F6E5900C7BA2D /* lib */,
+				7FB38860222E6092003F17BD /* 8-9 */,
 				7F21DD5C2228FB3800E47B67 /* sockopt */,
 				7F06CD4422241D0700A15190 /* 8-1 */,
 				72AC352A2220FD6B004BE496 /* 7-1 */,
@@ -112,6 +127,36 @@
 				7F21DD5D2228FB5500E47B67 /* checksockopt.c */,
 			);
 			path = sockopt;
+			sourceTree = "<group>";
+		};
+		7FB38860222E6092003F17BD /* 8-9 */ = {
+			isa = PBXGroup;
+			children = (
+				7FB38861222E60AB003F17BD /* gethostbyname.c */,
+			);
+			path = "8-9";
+			sourceTree = "<group>";
+		};
+		7FB75E9F222F6E5900C7BA2D /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				7FB75EA0222F6E6B00C7BA2D /* libnet.h */,
+				7FB75EA1222F6E6B00C7BA2D /* libnet.c */,
+				7FB75EA3222F740200C7BA2D /* daytimecli.c */,
+				7FB75EA5222F911300C7BA2D /* daytimeserv.c */,
+				7FB75EA9222F9D1900C7BA2D /* daytimeudpcli.c */,
+				7FB75EAB222FA9BA00C7BA2D /* daytimeudpserv.c */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		7FE2EB7522322F2300ACC5F2 /* 9-2 */ = {
+			isa = PBXGroup;
+			children = (
+				7FE2EB7622322F5F00ACC5F2 /* daytimeserv.c */,
+				7FE2EB7922324BC700ACC5F2 /* daytimeservinetd.c */,
+			);
+			path = "9-2";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +215,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F21DD5E2228FB5500E47B67 /* checksockopt.c in Sources */,
+				7FE2EB7A22324BC700ACC5F2 /* daytimeservinetd.c in Sources */,
+				7FE2EB78223234EB00ACC5F2 /* daytimeserv.c in Sources */,
+				7FE2EB73223102DF00ACC5F2 /* daytimecli.c in Sources */,
+				7FB75EA2222F6E6B00C7BA2D /* libnet.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
