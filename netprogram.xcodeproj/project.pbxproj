@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7267A070222B8AF8002221EA /* tcp_udp_echo.c in Sources */ = {isa = PBXBuildFile; fileRef = 7267A06F222B8AF8002221EA /* tcp_udp_echo.c */; };
+		721553422234C34300F95956 /* echo_server.c in Sources */ = {isa = PBXBuildFile; fileRef = 721553412234C34300F95956 /* echo_server.c */; };
+		721553452234C4DB00F95956 /* echo_client.c in Sources */ = {isa = PBXBuildFile; fileRef = 721553442234C4DB00F95956 /* echo_client.c */; };
 		7F06CD4922241DFC00A15190 /* libunp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72AC35282220FAAB004BE496 /* libunp.a */; };
 		7FB75EA2222F6E6B00C7BA2D /* libnet.c in Sources */ = {isa = PBXBuildFile; fileRef = 7FB75EA1222F6E6B00C7BA2D /* libnet.c */; };
-		7FE2EB73223102DF00ACC5F2 /* daytimecli.c in Sources */ = {isa = PBXBuildFile; fileRef = 7FB75EA3222F740200C7BA2D /* daytimecli.c */; };
-		7FE2EB78223234EB00ACC5F2 /* daytimeserv.c in Sources */ = {isa = PBXBuildFile; fileRef = 7FE2EB7622322F5F00ACC5F2 /* daytimeserv.c */; };
-		7FE2EB7A22324BC700ACC5F2 /* daytimeservinetd.c in Sources */ = {isa = PBXBuildFile; fileRef = 7FE2EB7922324BC700ACC5F2 /* daytimeservinetd.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +26,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7214297F2233696C00164283 /* testconnect.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = testconnect.c; sourceTree = "<group>"; };
+		721429822233760400164283 /* daytimeclio.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = daytimeclio.c; sourceTree = "<group>"; };
+		721553412234C34300F95956 /* echo_server.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = echo_server.c; sourceTree = "<group>"; };
+		721553442234C4DB00F95956 /* echo_client.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = echo_client.c; sourceTree = "<group>"; };
 		72200188222A29970076F274 /* echo_udp_client.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = echo_udp_client.c; sourceTree = "<group>"; };
 		7267A067222B7FAF002221EA /* echo_udp_server.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = echo_udp_server.c; sourceTree = "<group>"; };
 		7267A06A222B870E002221EA /* udp_address.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = udp_address.c; sourceTree = "<group>"; };
@@ -66,6 +68,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7214297E2233676300164283 /* 9-3 */ = {
+			isa = PBXGroup;
+			children = (
+				7214297F2233696C00164283 /* testconnect.c */,
+				721429822233760400164283 /* daytimeclio.c */,
+				721553412234C34300F95956 /* echo_server.c */,
+				721553442234C4DB00F95956 /* echo_client.c */,
+			);
+			path = "9-3";
+			sourceTree = "<group>";
+		};
 		72200184222A247F0076F274 /* 8-6udp */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +110,7 @@
 		72AC35182220ECDF004BE496 /* netprogram */ = {
 			isa = PBXGroup;
 			children = (
+				7214297E2233676300164283 /* 9-3 */,
 				7FE2EB7522322F2300ACC5F2 /* 9-2 */,
 				7FB75E9F222F6E5900C7BA2D /* lib */,
 				7FB38860222E6092003F17BD /* 8-9 */,
@@ -232,11 +246,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FE2EB7A22324BC700ACC5F2 /* daytimeservinetd.c in Sources */,
-				7FE2EB78223234EB00ACC5F2 /* daytimeserv.c in Sources */,
-				7FE2EB73223102DF00ACC5F2 /* daytimecli.c in Sources */,
 				7FB75EA2222F6E6B00C7BA2D /* libnet.c in Sources */,
-				7267A070222B8AF8002221EA /* tcp_udp_echo.c in Sources */,
+				721553452234C4DB00F95956 /* echo_client.c in Sources */,
+				721553422234C34300F95956 /* echo_server.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,7 +400,10 @@
 					/Users/wentaoxing/Documents/unixnetworkprogram,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = /Users/wentaoxing/Documents/unixnetworkprogram/lib;
+				USER_HEADER_SEARCH_PATHS = (
+					/Users/wentaoxing/Documents/unixnetworkprogram/lib,
+					/Users/tomxing/Documents/unixnetworkprogram/lib,
+				);
 			};
 			name = Release;
 		};

@@ -22,9 +22,20 @@ int main(int argc, char** argv) {
     printf("send to %s\n", Sock_ntop(addr, len));
     sendto(sockfd, "", 0, 0, addr, len);
     
+    // test select timeout
+    if (Readable_timeo2(sockfd, 5) == 0) {
+        printf("timeout\n");
+    } else {
+        readn = recvfrom(sockfd, buf, MAXLINE, 0, NULL, NULL);
+        buf[readn] = 0;
+        printf("%s", buf);
+    }
+    
+    /*
     readn = recvfrom(sockfd, buf, MAXLINE, 0, NULL, NULL);
     buf[readn] = 0;
     printf("%s", buf);
+     */
     /*
     sockfd = Udp_connect2(argv[1], argv[2]);
     Write(sockfd, "", 0);

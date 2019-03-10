@@ -136,11 +136,15 @@ int main(int argc, char ** argv) {
         Connect(sockfd[i], (SA *) &addr, sizeof(addr));
     }
 //    Signal(SIGPIPE, sig_pipe);
+
+/*
     FILE * fp = fopen("./text.txt", "r");
     if (fp == NULL) {
         err_quit("read text.txt failed");
     }
+*/
+    str_cli(stdin, sockfd[0]);
     
-    str_cli_select2(fp, sockfd[0]);
+    // str_cli_select2(fp, sockfd[0]);
     exit(0);
 }

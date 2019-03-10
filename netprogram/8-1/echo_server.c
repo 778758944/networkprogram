@@ -77,6 +77,17 @@ void str_echo3(int sockfd) {
     }
 }
 
+void str_echo_std(int sockfd) {
+    char buf[MAXLINE];
+    FILE *fin, *fout;
+    fin = Fdopen(sockfd, "r");
+    fout = Fdopen(sockfd, "w");
+
+    while (Fgets(buf, MAXLINE, fin)) {
+        Fputs(buf, fout);
+    }
+}
+
 int main() {
     int listenfd, connfd;
     pid_t childpid;
@@ -105,7 +116,7 @@ int main() {
         }
         if ((childpid = fork()) == 0) {
             Close(listenfd);
-            str_echo(connfd);
+            str_echo_std(connfd);
             exit(0);
         }
         Close(connfd);

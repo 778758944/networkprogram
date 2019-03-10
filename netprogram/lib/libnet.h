@@ -21,3 +21,7 @@ int Udp_connect2(const char * host, const char * serv);
 int Udp_server2(const char * host, const char * serv, socklen_t * addrlen);
 int Deamon_init(const char * pname, int facility);
 void Deamon_inetd(const char * pname, int facility);
+// 9-3
+
+int Connect_timeo2(int sockfd, const SA* addr, socklen_t addrlen, int nsec);
+int Readable_timeo2(int fd, int sec);

@@ -110,7 +110,9 @@ int Udp_client2(const char * host, const char * serv, SA** addr, socklen_t * len
         err_quit("udp_client can not connect %s:%s", host, serv);
     }
     
+    
     *addr = malloc(sizeof(r->ai_addrlen));
+    printf("dede");
     memcpy(*addr, r->ai_addr, r->ai_addrlen);
     *len = r->ai_addrlen;
     
@@ -220,3 +222,44 @@ void Deamon_inetd(const char * pname, int facility) {
     deamon_proc = 1;
     openlog(pname, LOG_PID, facility);
 }
+
+// 9-3
+static void connect_alarm(int signal) {
+    // to interrupt the block function with ENITR return
+    return;
+}
+
+int Connect_timeo2(int sockfd, const SA* addr, socklen_t addrlen, int nsec) {
+    int n;
+    Sigfunc * fn;
+    
+    fn = Signal(SIGALRM, connect_alarm);
+    
+    if (alarm(nsec) < 0) {
+        err_msg("connect_timeo: alarm is already set");
+    }
+    
+    if ((n = connect(sockfd, addr, addrlen)) < 0) {
+        close(sockfd);
+        if (n == EINTR) n = ETIMEDOUT;
+    }
+    // cancel timeout
+    alarm(0);
+    Signal(SIGALRM, fn);
+    return n;
+}
+
+int Readable_timeo2(int fd, int sec) {
+    fd_set rset;
+    struct timeval tv;
+    
+    FD_ZERO(&rset);
+    
+    FD_SET(fd, &rset);
+    tv.tv_sec = sec;
+    tv.tv_usec = 0;
+    // if timeout return 0;
+    return select(fd + 1, &rset, NULL, NULL, &tv);
+}
+
+

@@ -30,6 +30,7 @@ int main(int argc, char ** argv) {
         printf("data from %s\n", Sock_ntop(&addr, addrlen));
         t = time(NULL);
         snprintf(buf, MAXLINE, "%.24s\r\n", ctime(&t));
+        sleep(10);
         sendto(sockfd, buf, strlen(buf), 0, &addr, addrlen);
     }
 }
