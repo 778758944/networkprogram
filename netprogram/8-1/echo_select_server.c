@@ -9,6 +9,7 @@
 #include "unp.h"
 
 int main() {
+    printf("select server\n");
     struct sockaddr_in servaddr, cliaddr;
     socklen_t clilen;
     int listenfd, connfd, sockfd;
@@ -40,6 +41,8 @@ int main() {
         nready = Select(maxfd + 1, &rset, NULL, NULL, NULL);
         printf("nready: %d\n", nready);
         if (FD_ISSET(listenfd, &rset)) {
+            printf("listening socket readable\n");
+            sleep(5);
             clilen = sizeof(cliaddr);
             connfd = Accept(listenfd, (SA*) &cliaddr, &clilen);
             int i;

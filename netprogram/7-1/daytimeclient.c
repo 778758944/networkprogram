@@ -35,9 +35,9 @@ int main(int argc, char **argv) {
     }
 
     int t = getsockname(sockfd, (SA*) &cliaddr, &len);
-    printf("getsockname: %d\n", t);
-    inet_ntop(AF_INET, &(cliaddr.sin_addr.s_addr), ip, 100);
-    printf("ip: %s, port: %d\n", ip, ntohs(cliaddr.sin_port));
+    // printf("getsockname: %d\n", t);
+    // inet_ntop(AF_INET, &(cliaddr.sin_addr.s_addr), ip, 100);
+    // printf("ip: %s, port: %d\n", ip, ntohs(cliaddr.sin_port));
     
     while ((n = (int) read(sockfd, recvline, MAXLINE)) > 0) {
         recvline[n] = 0;

@@ -27,10 +27,11 @@ int main(int argc, char ** argv) {
     for(;;) {
         addrlen = sizeof(addr);
         recvfrom(sockfd, buf, MAXLINE, 0, &addr, &addrlen);
+        printf("family: %d\n", addr.sa_family);
         printf("data from %s\n", Sock_ntop(&addr, addrlen));
         t = time(NULL);
         snprintf(buf, MAXLINE, "%.24s\r\n", ctime(&t));
-        sleep(10);
+        printf("send time back\n");
         sendto(sockfd, buf, strlen(buf), 0, &addr, addrlen);
     }
 }

@@ -63,7 +63,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "127.0.0.1"
+            argument = "224.0.0.1"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

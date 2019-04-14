@@ -1,9 +1,9 @@
-# CFLAGS = -I/Users/wentaoxing/Documents/unixnetworkprogram/lib -g -O2 -D_REENTRANT -Wall
-# LIBS = /Users/wentaoxing/Documents/unixnetworkprogram/libunp.a -lresolv -lpthread
+CFLAGS = -I/Users/wentaoxing/Documents/unixnetworkprogram/lib -g -O2 -D_REENTRANT -Wall
+LIBS = /Users/wentaoxing/Documents/unixnetworkprogram/libunp.a -lresolv -lpthread
 
 
-CFLAGS = -I/Users/tomxing/Documents/unixnetworkprogram/lib -g -O2 -D_REENTRANT -Wall
-LIBS = /Users/tomxing/Documents/unixnetworkprogram/libunp.a -lresolv -lpthread
+#CFLAGS = -I/Users/tomxing/Documents/unixnetworkprogram/lib -g -O2 -D_REENTRANT -Wall
+#LIBS = /Users/tomxing/Documents/unixnetworkprogram/libunp.a -lresolv -lpthread
 
 daytimeserv: daytimeserv.c libnet.c
 	${CC} ${CFLAGS} -o $@ daytimeserv.c libnet.c ${LIBS}

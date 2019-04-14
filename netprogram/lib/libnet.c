@@ -9,7 +9,7 @@
 
 #include "./libnet.h"
 
-struct addrinfo * Host_serv(const char * host, const char * serv, int family, int socktype) {
+struct addrinfo * Host_serv2(const char * host, const char * serv, int family, int socktype) {
     struct addrinfo dint, * result;
     bzero(&dint, sizeof(dint));
     dint.ai_family = family;
@@ -176,7 +176,7 @@ int Udp_server2(const char * host, const char * serv, socklen_t * addrlen) {
     return sockfd;
 }
 
-int Deamon_init(const char * pname, int facility) {
+int Deamon_init2(const char * pname, int facility) {
     int i;
     pid_t pid;
     
@@ -218,7 +218,7 @@ int Deamon_init(const char * pname, int facility) {
     return 0;
 }
 
-void Deamon_inetd(const char * pname, int facility) {
+void Deamon_inetd2(const char * pname, int facility) {
     deamon_proc = 1;
     openlog(pname, LOG_PID, facility);
 }

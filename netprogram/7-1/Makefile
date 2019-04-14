@@ -1,5 +1,5 @@
-CFLAGS = -I/Users/tomxing/Documents/unixnetworkprogram/lib -g -O2 -D_REENTRANT -Wall
-LIBS = /Users/tomxing/Documents/unixnetworkprogram/libunp.a -lresolv -lpthread
+CFLAGS = -I/Users/wentaoxing/Documents/unixnetworkprogram/lib -g -O2 -D_REENTRANT -Wall
+LIBS = /Users/wentaoxing/Documents/unixnetworkprogram/libunp.a -lresolv -lpthread
 
 
 daytimeserver:	daytimeserver.c

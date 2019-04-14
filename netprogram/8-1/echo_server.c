@@ -116,7 +116,7 @@ int main() {
         }
         if ((childpid = fork()) == 0) {
             Close(listenfd);
-            str_echo_std(connfd);
+            str_echo(connfd);
             exit(0);
         }
         Close(connfd);
