@@ -70,6 +70,6 @@ int main(int argc, char **argv) {
     servaddr.sin_port = htons(SERV_PORT);
     inet_pton(AF_INET, argv[1], &servaddr.sin_addr);
     sockfd = Socket(AF_INET, SOCK_DGRAM, 0);
-    echo_cli3(stdin, sockfd, (SA*) &servaddr, sizeof(servaddr));
+    dg_cli(stdin, sockfd, (SA*) &servaddr, sizeof(servaddr));
     return 0;
 }
