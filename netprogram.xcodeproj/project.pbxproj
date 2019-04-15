@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72CF71812262F4090037BCB0 /* recvfromflags.c in Sources */ = {isa = PBXBuildFile; fileRef = 72CF717B2262E4320037BCB0 /* recvfromflags.c */; };
+		72CF71822262F4090037BCB0 /* dgechoaddr.c in Sources */ = {isa = PBXBuildFile; fileRef = 72CF717D2262EDEF0037BCB0 /* dgechoaddr.c */; };
+		72CF71832262F4090037BCB0 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 72CF717F2262F32F0037BCB0 /* main.c */; };
 		7F06CD4922241DFC00A15190 /* libunp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72AC35282220FAAB004BE496 /* libunp.a */; };
-		7F46D8CC22606FE000AF9D6B /* send.c in Sources */ = {isa = PBXBuildFile; fileRef = 7F46D8CB22606FE000AF9D6B /* send.c */; };
-		7F46D8CE2260722F00AF9D6B /* recv.c in Sources */ = {isa = PBXBuildFile; fileRef = 7F46D8CD2260722F00AF9D6B /* recv.c */; };
-		7F46D8D222607ED100AF9D6B /* ntp.c in Sources */ = {isa = PBXBuildFile; fileRef = 7F46D8D122607ED100AF9D6B /* ntp.c */; };
-		7F46D8D4226084F800AF9D6B /* sntp_proc.c in Sources */ = {isa = PBXBuildFile; fileRef = 7F46D8D3226084F800AF9D6B /* sntp_proc.c */; };
-		7FB5B826225F239100C831CB /* dgcli.c in Sources */ = {isa = PBXBuildFile; fileRef = 7FB5B824225F200100C831CB /* dgcli.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +39,10 @@
 		72AC35282220FAAB004BE496 /* libunp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libunp.a; path = ../unixnetworkprogram/libunp.a; sourceTree = "<group>"; };
 		72AC352B2220FD81004BE496 /* daytimeclient.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = daytimeclient.c; sourceTree = "<group>"; };
 		72AC3531222101F6004BE496 /* daytimeserver.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = daytimeserver.c; sourceTree = "<group>"; };
+		72CF717A2262E4320037BCB0 /* recvfromflags.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = recvfromflags.h; sourceTree = "<group>"; };
+		72CF717B2262E4320037BCB0 /* recvfromflags.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = recvfromflags.c; sourceTree = "<group>"; };
+		72CF717D2262EDEF0037BCB0 /* dgechoaddr.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dgechoaddr.c; sourceTree = "<group>"; };
+		72CF717F2262F32F0037BCB0 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		7F06CD4522241D2100A15190 /* echo_server.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = echo_server.c; sourceTree = "<group>"; };
 		7F06CD4B222422D500A15190 /* echo_client.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = echo_client.c; sourceTree = "<group>"; };
 		7F06CD5322251BF500A15190 /* sum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sum.h; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		72AC35182220ECDF004BE496 /* netprogram */ = {
 			isa = PBXGroup;
 			children = (
+				72CF71792262E40E0037BCB0 /* advio */,
 				7F46D8CF22607EB500AF9D6B /* ssntp */,
 				7F46D8C72260677900AF9D6B /* mcast */,
 				7F46D8C322605D0000AF9D6B /* mysdr */,
@@ -200,6 +203,17 @@
 				72AC3531222101F6004BE496 /* daytimeserver.c */,
 			);
 			path = "7-1";
+			sourceTree = "<group>";
+		};
+		72CF71792262E40E0037BCB0 /* advio */ = {
+			isa = PBXGroup;
+			children = (
+				72CF717A2262E4320037BCB0 /* recvfromflags.h */,
+				72CF717B2262E4320037BCB0 /* recvfromflags.c */,
+				72CF717D2262EDEF0037BCB0 /* dgechoaddr.c */,
+				72CF717F2262F32F0037BCB0 /* main.c */,
+			);
+			path = advio;
 			sourceTree = "<group>";
 		};
 		7F06CD4422241D0700A15190 /* 8-1 */ = {
@@ -428,11 +442,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F46D8D4226084F800AF9D6B /* sntp_proc.c in Sources */,
-				7F46D8D222607ED100AF9D6B /* ntp.c in Sources */,
-				7FB5B826225F239100C831CB /* dgcli.c in Sources */,
-				7F46D8CE2260722F00AF9D6B /* recv.c in Sources */,
-				7F46D8CC22606FE000AF9D6B /* send.c in Sources */,
+				72CF71812262F4090037BCB0 /* recvfromflags.c in Sources */,
+				72CF71822262F4090037BCB0 /* dgechoaddr.c in Sources */,
+				72CF71832262F4090037BCB0 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,11 +566,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = /Users/wentaoxing/Documents/unixnetworkprogram/lib;
-				LIBRARY_SEARCH_PATHS = /Users/wentaoxing/Documents/unixnetworkprogram;
+				HEADER_SEARCH_PATHS = /Users/tomxing/Documents/unixnetworkprogram/lib;
+				LIBRARY_SEARCH_PATHS = /Users/tomxing/Documents/unixnetworkprogram/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = /Users/wentaoxing/Documents/unixnetworkprogram/lib;
-				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
+				USER_HEADER_SEARCH_PATHS = /Users/tomxing/Documents/unixnetworkprogram/lib;
 			};
 			name = Debug;
 		};
@@ -566,10 +577,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = /Users/wentaoxing/Documents/unixnetworkprogram/lib;
-				LIBRARY_SEARCH_PATHS = /Users/wentaoxing/Documents/unixnetworkprogram;
+				HEADER_SEARCH_PATHS = /Users/tomxing/Documents/unixnetworkprogram/lib;
+				LIBRARY_SEARCH_PATHS = /Users/tomxing/Documents/unixnetworkprogram/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = /Users/wentaoxing/Documents/unixnetworkprogram/lib;
+				USER_HEADER_SEARCH_PATHS = /Users/tomxing/Documents/unixnetworkprogram/lib;
 			};
 			name = Release;
 		};
